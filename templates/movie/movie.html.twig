@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Film : {{ name }}{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+{#{% if name != '' or name != NULL %}
+    <h1>Recherche pour {{name}}</h1>
+{% endif %}#}
+<br>
+<ul>
+<div class="container text-center">
+    <div class="row align-items-start">
+{% for movie in movieList %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src='https://www.themoviedb.org/t/p/w220_and_h330_face/{{movie.poster_path}}' class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.overview }}</p>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+    </div>
+</div>
+</ul>
+</div>
+{% endblock %}
